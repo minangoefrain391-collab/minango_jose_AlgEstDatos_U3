@@ -149,6 +149,7 @@ def km_de_ruta(grafo, ruta):
 
 def comparar_rutas(grafo, origen, destino):
     """Devuelve un diccionario con la ruta de menos escalas (BFS) y la de menos km (Dijkstra)."""
+    # O((V + E) log V): manda Dijkstra; el BFS y rearmar las rutas son O(V + E)
     escalas, padre = bfs_escalas(grafo, origen)
     ruta_a = ruta_bfs(padre, destino)
     distancias = dijkstra(grafo, origen)
